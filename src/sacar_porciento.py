@@ -1,4 +1,4 @@
-
+import pandas as pd
 
 def calcular_frecuencia(df, lista_items, columna):
     """

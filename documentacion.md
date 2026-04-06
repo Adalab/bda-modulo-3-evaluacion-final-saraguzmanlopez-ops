@@ -1,7 +1,8 @@
-## Documento "Customer Loyalty History.csv" es un documento proporcionado por nuestro cliente en formato CSV
 
 
- Características principales :
+
+ Características principales -> Customer Loyalty History.csv :
+ 
         Formato CSV
 
         Consta de 16737 filas , 15 columnas
@@ -20,7 +21,8 @@
                      'Cancellation Year','Cancellation Month', investigar si estas dos columnas no son completamente 
                 INT :  
                     'Enrollment Year', 'Enrollment Month'
-
+                
+                STRING: Country,Province, City, Postal Code,Gender,Education , Marital Status ,Loyalty Card ,Enrollment Type
 
 Características por columnas :
 
@@ -168,3 +170,96 @@ Columnas a estudias los nulos
 
 Columnas a fusionar : Cancellation Year , Cancellation Month 
                                         
+
+
+
+
+
+Características principales -> Customer Loyalty Activit.csv :
+        Formato CSV
+
+        Consta de 405624 Filas , 9 columnas
+
+        Nulos : No hay nulos 
+
+        Tipo son String, Float e Int
+                Float:
+                    Points Accumulated  
+                INT :  
+                    Year, Month, Flights Booked, Flights with Companions,Total Flights, Distance,Points Redeemed,Dollar Cost Points Redeemed
+
+       Duplicados 56.38 %
+
+Exploracion por columnas :
+
+     Year-> Indica el año en el cual se registraron las actividades de vuelo para el cliente.
+          Solo 2 valores 
+                    2017: 50.0%
+                    2018: 50.0%
+          tipo int
+          sin nulos
+     
+     Month -> Representa el mes del año (de 1 a 12) en el cual ocurrieron las actividades de vuelo.
+          Tipo int 
+          sin nulos
+          Se puede fusionar con la columna year
+
+     Flights Booked -> Número total de vuelos reservados por el cliente en ese mes específico.
+          Int 
+          no hay nulos
+          
+     Flights with Companions ->Número de vuelos reservados en los cuales el cliente viajó con acompañantes
+          Int
+          No hay nulos
+          Maximo es 11
+          Minimo es 0
+          Media es 1.03
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+     
+     Total Flights ->El número total de vuelos que el cliente ha realizado, que puede incluir vuelos reservados en meses     anteriores.
+          Int 
+          No nulos
+          media es de 5.15 vuelos totales
+          Maximo es de 32
+          Minimi es de 0
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+
+     Distance-> La distancia total (presumiblemente en millas o kilómetros) que el cliente ha volado durante el mes.
+          Int 
+          No nulos
+          media es de 1208.88 millas o km , no me dicen si es millas o km
+          Maximo es de 6293
+          Minimi es de 0
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+
+
+
+     Points Accumulated ->Puntos acumulados por el cliente en el programa de lealtad durante el mes, con base en la distancia volada u otros factores.
+          Float
+          No nulos
+          media es de 676.5  puntos
+          Maximo es de 123.69 puntos
+          Minimi es de 0
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+
+     Points Redeemed ->Puntos que el cliente ha redimido en el mes, posiblemente para obtener beneficios como vuelos gratis, mejoras, etc.
+          Int 
+          no nulos 
+        
+          media es de 30.7   puntos
+          Maximo es de 876 puntos
+          Minimi es de 0
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+
+     Dollar Cost Points Redeemed -> El valor en dólares de los puntos que el cliente ha redimido durante el mes.
+          Int 
+          no nulos 
+        
+          media es de 2.8  Dolar en puntos
+          Maximo es de 71  Dolar en puntos
+          Minimi es de 0
+          * estudiar si ese 0 puede ser eliminado ya que no tiene vuelos o es que esta anidado a otra columna
+
+
+columnas posible fusion Year, Month
+Columnas estudiar que significa el 0 :Flights with Companions,Total Flights , Distance,  Points Accumulated,  Points Redeemed
