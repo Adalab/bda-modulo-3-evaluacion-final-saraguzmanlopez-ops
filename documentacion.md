@@ -24,11 +24,14 @@
 
 Características por columnas :
 
-    COUNTRY , columna candidata a ser eliminada, ya que sólo tiene un valor Canada, por lo tanto no es relevante
+    COUNTRY  -> País de residencia del cliente
+    
+          columna candidata a ser eliminada, ya que sólo tiene un valor Canada, por lo tanto no es relevante
           16737  filas por lo tanto sin nulos 
           un solo valor 'Canada', por lo tanto no aporta informacion relevante y es candidata a ser eliminada
 
-    PROVINCE :
+    PROVINCE -> Provincia o estado de residencia del cliente
+    
           16737  filas por lo tanto sin nulos 
           tipo String
           11 provincicias diferentes introducidas , canad tiene 10 provincias y 3 territorios, YUkon lo han metido como       
@@ -48,18 +51,23 @@ Características por columnas :
                Prince Edward Island: 0.39%
 
 
-    City:
+    City -> Ciudad de residencia del cliente.
+
           16737  filas por lo tanto sin nulos 
           tipo String
           29 ciudades diferententes que se han introducido
           bien escrito los nombres mayusculas y sin objetos raros
 
-    Postal Code
+
+    Postal Code ->Código postal del cliente.
+
           tipo ship, por lo que se valora que tenga que separar los datos o fusionarlos
           Sin nulos
           tipo string 
 
-    Gender
+
+    Gender ->  Género del cliente.
+
           sin nulos porque hay 16737 filas
           tipo string
           Cateórica ,dos categorias, Male y Fameles
@@ -67,20 +75,89 @@ Características por columnas :
                50.25% de las clientas son mujeres     
 
 
-     Education
+     Education -> Nivel educativo alcanzado por el cliente
+
           sin nulos porque hay 16737 filas
           tipo string
+          Categoricas con 5 categorias (Bachelor,College,High School or Below,Doctor,Master)
                Bachelor: 62.59%
                College: 25.32%
                High School or Below: 4.67%
                Doctor: 4.39%
                Master: 3.04%
 
-     Salary
+     Salary ->Ingreso anual estimado del cliente
+
           25,32 % de valores nulos
           0,12 % de valores negativos, en esta columna es erroneo que se encuentre valores negativos 
-                        
-                          
+
+
+     Marital Status ->  Estado civil del cliente 
+
+          Tipo String
+          Categorica con 3 categorias ('Married', 'Divorced', 'Single')
+               Casados: 58.16%
+               Solteros: 26.79% 
+               Divorciados: 15.04%
+
+
+     Loyalty Card -> tipo de tarjeta de lealtad que posee el cliente
+
+          Categorica con 3 categorias ('Star', 'Aurora', 'Nova')
+               Star: 45.63%%
+               Nova: 33.88%
+               Aurora: 20.49
+
+
+     CLV -> Valor total estimado que el cliente aporta a la empresa durante toda la relación que mantiene con ella.
+
+          Tipo Float, lo esperado por que es un valor
+          la media es : 7988.9
+          sin nulos
+
+     Enrollment Type-> Tipo de inscripción del cliente en el programa de lealtad 
+
+          Tipo string 
+          No nulos
+          Categorica 2 categorias (Standar,2018 Promotion)
+               Standard : 94.2 %
+               2018 Promotion : 5.8 %
+
+
+     Enrollment Type-> Año en que el cliente se inscribió en el programa de lealtad.
+
+          Tipo int que para años esta perfercto
+          van en un intervalo de años de 2012 a 2017
+               2012 : 10.07 %
+               2013 : 14.32 %
+               2014 : 14.16 %
+               2015 : 13.93 %
+               2016 : 14.67 %
+               2017 : 14.86 %
+l
+
+     Enrollment Month -> Mes en que el cliente se inscribió en el programa de lealtad.
+          Tipo int, 
+          mes por número
+          no nulos 
+
+     Cancellation Year -> Año en que el cliente canceló su membresía en el programa de lealtad, si aplica.
+          87.65 % de nulos
+          quiere decir que el cliente no se ha dado de baja , es decir aun esta dado de alta
+          tipo float
+
+          
+     Cancellation Month -> Mes en que el cliente canceló su membresía en el programa de lealtad, si
+          87.65 % de nulos
+          quiere decir que el cliente no se ha dado de baja , es decir aun esta dado de alta
+          tipo float
+          columna exactamente igual que cancellation Year, una dice el mes y otro año , valorar fusionar
+                                        
+Columnas Categoricas:
+          Loyalty Card
+           Marital Status
+            Education
+            Gender
 
 Columnas que se deben valorar eliminar:
      COUNTRY ,ya que sólo tiene un valor Canada, por lo tanto no es relevante y puede ser eliminada.
@@ -89,4 +166,5 @@ Columnas a estudias los nulos
      Saraly , con un 25,32%  de valores nulos  y un 0,12% de valores negativos
 
 
-
+Columnas a fusionar : Cancellation Year , Cancellation Month 
+                                        
