@@ -61,7 +61,7 @@ Características por columnas :
           bien escrito los nombres mayusculas y sin objetos raros
 
 
-    Postal Code ->Código postal del cliente.
+    Postal Code -> Código postal del cliente.
 
           tipo ship, por lo que se valora que tenga que separar los datos o fusionarlos
           Sin nulos
