@@ -54,6 +54,12 @@ Los notebooks están numerados para seguir el orden lógico del análisis:
 | :---: | :---: | :---: |
 |  |  |  |
 
+## 🗣️ Next Step
+
+- Unir en un .main y solo ejecutar a través de este y de la terminal
+- Hacer carpeta ETL para mejor organizado
+- Mas funciones .py para incluir en el .main
+- Imagen mas corporativa en las visualizaciones, en este caso al ser examen se ha querido mostrar la cantidad de conocimientos    adquiridos y la imagen no ha sido corporativa
 -----
 
 ## 👤 Autor
